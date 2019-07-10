@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: Lx-Passbook
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/passbook?serverTimezone=GMT%2B8
+    username: root
+    password: 123456
+  kafka:
+    bootstrap-servers: 127.0.0.1:9092
+    consumer:
+      group-id: passbook
+    listener:
+      concurrency: 4
+  data:
+    hbase:
+      quorum: 127.0.0.1:2181
+      rootDir: file:///F:/tools/hbase-1.2.0/root
+      nodeParent: /hbase
+  redis:
+    host: 127.0.0.1
+    port: 6379
+
+server:
+  port: 9528
+
+logging:
+  file: lx-passbook.log
+  level: debug
